@@ -51,7 +51,6 @@ function verify(year, score,  votes) {
 
 function showMovies(dataArray) {
     let body = `
-        <br><br>
         <table>
             <tr>
                 <th>Title</th>

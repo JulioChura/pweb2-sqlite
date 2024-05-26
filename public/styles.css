@@ -15,6 +15,10 @@ body {
     background-color: #999;
 }
 
+.contenido__forms label {
+    font-size: 2rem;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -124,8 +128,8 @@ body {
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 0 5px 5px 0;
-    padding: 8px 15px;
+    border-radius: 0 .5rem 0.5rem 0;
+    padding: 0.8rem 1.5rem;
     cursor: pointer;
     font-size: 16px;
 }
@@ -170,11 +174,13 @@ body {
 
 .contenido__forms input,
 .contenido__forms textarea {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 20px;
+    width: calc(100% - 2.2rem);
+    padding: 1rem;
+    margin-bottom: 2rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 0.4rem;
+    font-size: 2rem;
+    
 }
 
 .contenido__forms button {
@@ -182,8 +188,9 @@ body {
     background-color: #28a745;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     cursor: pointer;
+    font-size: 2rem;
 }
 
 .contenido__forms button:hover {
@@ -205,10 +212,9 @@ body {
 /* Estilos apra la tabla */
 
 table {
-    width: 80%;
-    margin: 0 auto; 
+    margin: 0 auto;
+    width: 100%;
     border-collapse: collapse; 
-    margin-bottom: 2rem;
 }
 td {
     background-color: black;
@@ -226,4 +232,16 @@ th {
 
 td:hover {
     background-color: #4b1717; 
+}
+
+/* Estilos apra el div que contiene la tabla  */
+
+.container__movie {
+    max-width: 70rem;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
 }
