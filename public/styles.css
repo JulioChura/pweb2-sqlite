@@ -197,14 +197,6 @@ body {
     background-color: #218838;
 }
 
-/* Estilo para ver las peliculas */
-.container__movie {
-    width: 65rem;
-    padding: 2vw;
-    margin: 2rem;
-    font-size: 2.2rem;
-}
-
 .description {
     width: 100%rem;
 }
@@ -237,11 +229,20 @@ td:hover {
 /* Estilos apra el div que contiene la tabla  */
 
 .container__movie {
-    max-width: 70rem;
+    width: 100rem;
+    padding: 2vw;
+    margin: 2rem;
+    font-size: 2.2rem;
     max-width: 80%;
     margin: 0 auto;
     margin-top: 5rem;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
+}
+
+.container__vacio {
+    margin: 0 auto;
+    width: 100rem;
+    max-width: 80%;
+    margin-top: 5rem;
 }

@@ -17,24 +17,26 @@
         </div>
 
         <div class="header__opciones">
-            <a href="peliculas.html">Peliculas</a>
-            <a href="actores.html">Actores</a>
-            <form action="search.html" method="get" class="search-form">
+            <a href="peliculas.html">Peliculas (filtrar)</a>
+            <form id="formSearch" method="get" class="search-form">
                 <input type="text" id="search" class="search" name="search" placeholder="Buscar películas...">
-                <button type="submit" class="search-button">&#128269;</button>
+                <button type="submit" class="search-button" onclick="searchFast()">&#128269;</button>
             </form>
         </div>
     </header>
 
-    <div class="container">
-        <h1 class="container__titulo">¿Qué haremos hoy?</h1>
-        <div class="contenido">
-            <p id="texto" class="animated-text">
-                PeliSesrch es un sitio web que te permite visualizar los datos de las mejores
-                películas de los años 80´s. Puedes <a href="peliculas.html" class="texto_enlace">ver las películas</a> por su score, año y más!
-                También puedes <a class="texto_enlace" href="actores.html">ver los actores</a> y los <a href="casting.html" class="texto_enlace">castings!</a>
-            </p>
+    <div id="empty" class="container__vacio">
+        <div class="container">
+            <h1 class="container__titulo">¿Qué haremos hoy?</h1>
+            <div class="contenido">
+                <p id="texto" class="animated-text">
+                    PeliSesrch es un sitio web que te permite visualizar los datos de las mejores
+                    películas de los años 80´s. Puedes ver las películaspor su score, año y más!
+                    También puedes ver los actoresy los castings!
+                </p>
+            </div>
         </div>
     </div>
+    <script src="script.js"> </script>
 </body>
 </html>

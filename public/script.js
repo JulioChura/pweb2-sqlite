@@ -72,3 +72,41 @@ function showMovies(dataArray) {
     body += `</table>`;
     return body;
 }
+
+document.getElementById('formSearch').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    searchFast();
+});
+
+
+function searchFast() {
+    let container = document.getElementById('empty');
+    container.innerHTML = " ";
+
+    const url = 'http://localhost:3000/todas';
+    const title = document.getElementById('search').value;
+    const data = {
+        title: title
+    };
+
+    const request = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data) 
+    };
+
+    fetch(url, request)
+        .then(response => response.json())
+        .then(dataServer => {
+            if (dataServer.error) {
+                alert(dataServer.error);
+            } else {
+                console.log(dataServer);
+                container.classList.add('container-styles');
+                container.innerHTML = showMovies(dataServer);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}

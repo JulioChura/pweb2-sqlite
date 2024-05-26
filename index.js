@@ -63,6 +63,19 @@ app.post("/", (req, res) => {
     });
 })
 
+app.post("/todas", (req, res) => {
+    const { title } = req.body;
+    const sql = 'SELECT * FROM Movie WHERE Title LIKE ?';
+    const params = [`%${title}%`];
+    db.all(sql, params, (err, rows) => {
+        if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+        }
+        res.json(rows);
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

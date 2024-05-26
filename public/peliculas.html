@@ -17,37 +17,37 @@
         </div>
 
         <div class="header__opciones">
-            <a href="peliculas.html">Peliculas</a>
-            <a href="actores.html">Actores</a>
-            <form action="search.html" method="get" class="search-form">
+            <a href="peliculas.html">Peliculas (filtrar)</a>
+            <form id="formSearch" method="get" class="search-form" id="formSearch">
                 <input type="text" id="search" class="search" name="search" placeholder="Buscar películas...">
-                <button type="submit" class="search-button">&#128269;</button>
+                <button type="submit" class="search-button" onclick="searchFast()">&#128269;</button>
             </form>
         </div>
     </header>
 
-    <div class="container2">
-        <form id="eventForm" class="contenido__forms" >
-            <div>
-                <label for="year" class="contenido__forms-label">Año exacto:</label>
-                <input type="number" id="year" name="year" class="contenido__forms-input">
-            </div>
-            <div>
-                <label for="score" class="contenido__forms-label">Menores o igual al puntaje de:</label>
-                <input type="number" id="score" name="score" class="contenido__forms-input" step="0.1">
-            </div>
-            <div>
-                <label for="votes" class="contenido__forms-label">Menores o igual al número de votos de:</label>
-                <input type="number" id="votes" name="votes" class="contenido__forms-input">
-            </div>
-            <button type="submit" class="contenido__forms-button" onclick="filterMovie()">Filtrar</button>
-        </form>
+    <div class="container__vacio" id="empty">
+        <div class="container2" >
+            <form id="eventForm" class="contenido__forms" >
+                <div>
+                    <label for="year" class="contenido__forms-label">Año exacto:</label>
+                    <input type="number" id="year" name="year" class="contenido__forms-input">
+                </div>
+                <div>
+                    <label for="score" class="contenido__forms-label">Menores o igual al puntaje de:</label>
+                    <input type="number" id="score" name="score" class="contenido__forms-input" step="0.1">
+                </div>
+                <div>
+                    <label for="votes" class="contenido__forms-label">Menores o igual al número de votos de:</label>
+                    <input type="number" id="votes" name="votes" class="contenido__forms-input">
+                </div>
+                <button type="submit" class="contenido__forms-button" onclick="filterMovie()">Filtrar</button>
+            </form>
+        </div>
+        <div class="container__movie" id="boxMovie"> </div>
     </div>
     
-    <div class="container__movie" id="boxMovie">
     
-    </div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
