@@ -3,7 +3,9 @@ function filterMovie() {
     const year = document.getElementById('year').value;
     const score = document.getElementById('score').value;
     const votes = document.getElementById('votes').value;
-    if (!verify(year, score, time)) {
+    console.log(year, score, votes)
+
+    if (!verify(year, score, votes)) {
         alert("Todos los campos deben llenarse!")
         return;
     }
@@ -37,8 +39,8 @@ function filterMovie() {
     .catch(error => console.error('Error:', error));
 }
 
-function verify(year, score,  time) {
-    if (year.trim() === '' || score.trim() === '' || time === '') {
+function verify(year, score,  votes) {
+    if (year.trim() === '' || score.trim() === '' || votes.trim() === '') {
         return false;
     }
     return true;
