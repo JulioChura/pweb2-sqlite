@@ -31,10 +31,7 @@ app.get('/a', (req, res) => {
             res.status(400).json({ error: err.message });
             return;
         }
-        res.json({
-            message: 'success',
-            data: rows
-        });
+        res.json(rows);
     });
 });
 
@@ -62,11 +59,7 @@ app.post("/", (req, res) => {
             return;
         }
         console.log("Datos filtrados:", rows);
-        res.json({
-            message: 'success',
-            data: rows
-        });
-        
+        res.json(rows);
     });
 })
 

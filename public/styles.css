@@ -201,3 +201,29 @@ body {
 .description {
     width: 100%rem;
 }
+
+/* Estilos apra la tabla */
+
+table {
+    width: 80%;
+    margin: 0 auto; 
+    border-collapse: collapse; 
+    margin-bottom: 2rem;
+}
+td {
+    background-color: black;
+    color: wheat;
+}
+th, td {
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    text-align: left; 
+}
+
+th {
+    background-color: #f2f2f2; 
+}
+
+td:hover {
+    background-color: #4b1717; 
+}

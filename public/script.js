@@ -1,12 +1,17 @@
+document.getElementById('eventForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    filterMovie();
+});
+
 function filterMovie() {
-    const url = 'http://localhost:3000/'
+    const url = 'http://localhost:3000/';
     const year = document.getElementById('year').value;
     const score = document.getElementById('score').value;
     const votes = document.getElementById('votes').value;
-    let boxMovie  = document.getElementById('boxMovie').value;
-
+    let boxMovie = document.getElementById('boxMovie');
+    
     if (!verify(year, score, votes)) {
-        alert("Todos los campos deben llenarse!")
+        alert("¡Todos los campos deben llenarse!");
         return;
     }
 
@@ -14,29 +19,25 @@ function filterMovie() {
         year: year,
         score: score,
         votes: votes
-    }
+    };
+
     const request = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data) 
-    }
-    console.log(request);
+    };
 
-    http = fetch(url, request)
-
-    http
+    fetch(url, request)
     .then(response => response.json())
-    .then(data => {
-        if (data.error) {
-            alert(data.error);
+    .then(dataServer => {
+        if (dataServer.error) {
+            alert(dataServer.error);
         } else {
-
-            alert('Evento creado correctamente');
+            console.log(dataServer);
+            boxMovie.innerHTML = showMovies(dataServer); 
         }
-        
-        document.getElementById('eventForm').reset(); 
     })
     .catch(error => console.error('Error:', error));
 }
@@ -47,7 +48,8 @@ function verify(year, score,  votes) {
     }
     return true;
 }
-function showMovies(data) {
+
+function showMovies(dataArray) {
     let body = `
         <br><br>
         <table>
@@ -58,13 +60,13 @@ function showMovies(data) {
                 <th>Votes</th>
             </tr>
     `;
-    for (let i = 0; i < data.length; i++) {
+    for (let data of dataArray) {
         body += `
             <tr>
-                <td>${data[i].Title}</td>
-                <td>${data[i].Year}</td>
-                <td>${data[i].Score}</td>
-                <td>${data[i].Votes}</td>
+                <td>${data.Title}</td>
+                <td>${data.Year}</td>
+                <td>${data.Score}</td>
+                <td>${data.Votes}</td>
             </tr>
         `;
     }
