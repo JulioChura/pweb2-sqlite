@@ -3,7 +3,6 @@ function filterMovie() {
     const year = document.getElementById('year').value;
     const score = document.getElementById('score').value;
     const votes = document.getElementById('votes').value;
-    console.log(year, score, votes)
 
     if (!verify(year, score, votes)) {
         alert("Todos los campos deben llenarse!")
